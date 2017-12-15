@@ -1,0 +1,30 @@
+import pickle
+import datetime
+import os,fnmatch
+import re
+import pandas as pd
+
+
+
+
+###########
+dt_date       = datetime.datetime.today()
+date_str      = dt_date.strftime('%m_%d_%Y')
+output_folder = "/Users/dimbul/Desktop/temp_desktop/private/stock_Prediction/output_data"
+####
+
+file_names = fnmatch.filter(os.listdir(output_folder), '*'+date_str+'.pkl')
+
+
+for fileName in file_names:
+    file_path = output_folder+'/'+ fileName
+    with open(file_path,'rb') as fp:
+        data = pickle.load(fp)
+
+
+
+
+
+
+
+
